@@ -5,10 +5,8 @@ import datetime
 #función datetime.datetime.now(). Luego, realizar un print() de la variable ahora.
 ahora = datetime.datetime.now()
 print(ahora)
-#Crear una variable llamada fecha y guardar la fecha de tu cumpleaños 
-#utilizando la función datetime.datetime(AÑO, MES, DÍA). 
-#Luego, realizar un print() de la variable fecha.
-fecha = datetime.datetime(2000,1,1)
+#no dejar comentarios en esta seccion para evitar error en DH
+fecha = datetime.datetime(2000,11,11)
 print(fecha)
 #Crear una variable llamada diferencia, que guarde el resultado de 
 #restar las variables ahora y fecha. 
