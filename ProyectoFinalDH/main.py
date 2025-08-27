@@ -135,28 +135,34 @@ sucursales = {"Oeste": ["Merlo", "Castelar", "Ramos Mejía"],
 # FUNCIÓN PARA BUSCAR USUARIO POR DNI
 def buscarUsuarioPorDni(nroBuscado):
     print("\nBuscando usuario...")
+    for usuario in usuarios:
+        if nroBuscado == usuario["Dni"]:
+            return usuario
+        else:
+            continue
+    return None
 
 # FUNCIÓN PARA CONSULTAR EL SALDO
 def consultarSaldo(usuario):
-print("\nConsultando Saldo...")
+    print("\nConsultando Saldo...")
 
 # FUNCIÓN PARA CONSULTAR FACTURAS
 def consultarFacturas(usuario):
-print("\nConsultando Facturas...")
+    print("\nConsultando Facturas...")
 
 # FUNCIÓN PARA PAGAR FACTURAS
 def pagarFacturas(usuario):
-print("\nPagando Facturas...")
+    print("\nPagando Facturas...")
 # LAS FACTURAS SOLO SE PAGAN SI TIENES SALDO SUFICIENTE
 # SI LAS FACTURAS SE PAGAN, SE BORRAN DEL DICCIONARIO
 
 # FUNCIÓN PARA CONSULTAR SUCURSALES
 def consultarSucursales():
-print("\nAccediendo a datos de sucursales...")
+    print("\nAccediendo a datos de sucursales...")
 
 # FUNCIÓN PARA SACAR TURNO
 def sacarTurno():
-print("\nObteniendo horarios disponibles...")
+    print("\nObteniendo horarios disponibles...")
 
 
 
@@ -166,32 +172,33 @@ print("\nObteniendo horarios disponibles...")
 print("\n**¡Hola! Soy Telmo, tu asistente virtual**")
 
 # SOLICITAR DNI CON input() Y ALMACENARLO EN UNA VARIABLE
+dniUser = int(input("Ingrese su DNI para poder brindarle los datos: "))
 
 # BUSCAR USUARIO SEGÚN SU DNI Y ALMACENARLO EN UNA VARIABLE LLAMADA "usuarioActual"
-
+usuarioActual = buscarUsuarioPorDni(dniUser)
 # SALUDAR AL "usuarioActual" SEGÚN SU NOMBRE
-
+print("¡Bienvenido! "+usuarioActual["Nombre"]+" al sistema de gestión")
 
 # BUCLE DEL CHATBOT - PERMITIR ELEGIR OPCIONES HASTA QUE DESEE TERMINAR
 
 continuar = "SI"
 while continuar == "SI":
-opcion = input("""
-Ingrese el número de opción que desea:
+    opcion = input("""
+    Ingrese el número de opción que desea:
 
-1. Consultar saldo
-2. Consultar facturas de servicios vencidas
-3. Pagar facturas
-4. Consultar sucursales
-5. Solicitar un turno
->>>>>>>>>>>>: """)
+    1. Consultar saldo
+    2. Consultar facturas de servicios vencidas
+    3. Pagar facturas
+    4. Consultar sucursales
+    5. Solicitar un turno
+    >>>>>>>>>>>>: """)
 
 # VERIFICAR QUE LA OPCIÓN INGRESADA SEA CORRECTA
 
 # USAR UN CONDICIONAL PARA EJECUTAR LA FUNCIÓN QUE CORRESPONDA SEGÚN LA ELECCIÓN
 
 # PREGUNTAR SI DESEA CONTINUAR
-continuar = "NO"
+    continuar = "NO"
 
 
 # CUANDO TERMINA EL BUCLE, SE MUESTRA UN MENSAJE DE DESPEDIDA
