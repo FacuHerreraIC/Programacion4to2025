@@ -145,12 +145,15 @@ def buscarUsuarioPorDni(nroBuscado):
 # FUNCIÓN PARA CONSULTAR EL SALDO
 def consultarSaldo(usuario):
     print("\nConsultando Saldo...")
-    return (usuarioActual["Saldo"])
+    return usuario["Saldo"]
 
 # FUNCIÓN PARA CONSULTAR FACTURAS
 def consultarFacturas(usuario):
     print("\nConsultando Facturas...")
-
+    if len(usuario["FacturasAdeudadas"]) == 0:
+        print("No hay facturas adeudadas.")
+    else:
+        return usuario["FacturasAdeudadas"]
 # FUNCIÓN PARA PAGAR FACTURAS
 def pagarFacturas(usuario):
     print("\nPagando Facturas...")
@@ -160,7 +163,7 @@ def pagarFacturas(usuario):
 # FUNCIÓN PARA CONSULTAR SUCURSALES
 def consultarSucursales():
     print("\nAccediendo a datos de sucursales...")
-
+    return sucursales
 # FUNCIÓN PARA SACAR TURNO
 def sacarTurno():
     print("\nObteniendo horarios disponibles...")
