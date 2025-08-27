@@ -195,14 +195,41 @@ while continuar == "SI":
     3. Pagar facturas
     4. Consultar sucursales
     5. Solicitar un turno
+    NO para finalizar
     >>>>>>>>>>>>: """)
 # VERIFICAR QUE LA OPCIÓN INGRESADA SEA CORRECTA
+    match opcion:
+        case "1":
+            print("Su saldo es de: ")
+            print(consultarSaldo(usuarioActual))
+            print("Para continuar ingrese la opcion deseada")
+        case "2":
+            print("Las facturas son: ")
+            print(consultarFacturas(usuarioActual))
+            print("Para continuar ingrese la opcion deseada")
+        case "3":
+            pagarFacturas(usuarioActual)
+        case "4":
+            print(consultarSucursales(usuarioActual))
+        case "5":
+            sacarTurno()
+        case "NO":
+            # CUANDO TERMINA EL BUCLE, SE MUESTRA UN MENSAJE DE DESPEDIDA
+            print("\n**¡Gracias por utilizar el servicio de autogestión!**")
+            break
+        case _:
+            opcion = input("""
+            La opcion ingresada no es valida, por favor,
+                           
+            Ingrese el número de opción que desea:
 
-# USAR UN CONDICIONAL PARA EJECUTAR LA FUNCIÓN QUE CORRESPONDA SEGÚN LA ELECCIÓN
+            1. Consultar saldo
+            2. Consultar facturas de servicios vencidas
+            3. Pagar facturas
+            4. Consultar sucursales
+            5. Solicitar un turno
+            NO para finalizar
+            >>>>>>>>>>>>: """)
 
-# PREGUNTAR SI DESEA CONTINUAR
-    continuar = "NO"
 
 
-# CUANDO TERMINA EL BUCLE, SE MUESTRA UN MENSAJE DE DESPEDIDA
-print("\n**¡Gracias por utilizar el servicio de autogestión!**")
