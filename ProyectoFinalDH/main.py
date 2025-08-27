@@ -163,7 +163,7 @@ def pagarFacturas(usuario):
 # FUNCIÓN PARA CONSULTAR SUCURSALES
 def consultarSucursales():
     print("\nAccediendo a datos de sucursales...")
-
+    return sucursales
 # FUNCIÓN PARA SACAR TURNO
 def sacarTurno():
     print("\nObteniendo horarios disponibles...")
