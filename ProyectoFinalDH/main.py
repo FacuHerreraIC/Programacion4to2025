@@ -145,6 +145,7 @@ def buscarUsuarioPorDni(nroBuscado):
 # FUNCIÓN PARA CONSULTAR EL SALDO
 def consultarSaldo(usuario):
     print("\nConsultando Saldo...")
+    return (usuarioActual["Saldo"])
 
 # FUNCIÓN PARA CONSULTAR FACTURAS
 def consultarFacturas(usuario):
