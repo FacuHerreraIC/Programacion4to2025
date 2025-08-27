@@ -192,7 +192,6 @@ while continuar == "SI":
     4. Consultar sucursales
     5. Solicitar un turno
     >>>>>>>>>>>>: """)
-
 # VERIFICAR QUE LA OPCIÓN INGRESADA SEA CORRECTA
 
 # USAR UN CONDICIONAL PARA EJECUTAR LA FUNCIÓN QUE CORRESPONDA SEGÚN LA ELECCIÓN
