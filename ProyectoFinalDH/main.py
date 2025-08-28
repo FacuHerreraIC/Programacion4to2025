@@ -129,6 +129,9 @@ sucursales = {"Oeste": ["Merlo", "Castelar", "Ramos Mejía"],
 "Caba": ["Belgrano", "Palermo", "Recoleta"],
 }
 
+# HORARIOS PREESTABLECIDOS
+horarios = ["08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00"]
+dias = ["Lunes","Martes","Miércoles","Jueves","Viernes"]
 
 # --- FUNCIONES DEL CHATBOT ---
 
@@ -167,7 +170,9 @@ def consultarSucursales():
 # FUNCIÓN PARA SACAR TURNO
 def sacarTurno():
     print("\nObteniendo horarios disponibles...")
-
+    random.choice(dias)
+    random.choice(horarios)
+    return print(random.choice(dias) + " a las " + random.choice(horarios))
 
 
 # --- INTERACCIONES DEL CHATBOT ---
