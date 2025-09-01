@@ -159,7 +159,30 @@ def consultarFacturas(usuario):
         return usuario["FacturasAdeudadas"]
 # FUNCIÓN PARA PAGAR FACTURAS
 def pagarFacturas(usuario):
-    print("\nPagando Facturas...")
+    if len(usuario["FacturasAdeudadas"]) == 0:
+        print("\n No tienes facturas pendientes.")
+        return
+
+    print("\nFacturas pendientes:")
+    for i, f in enumerate(usuario["FacturasAdeudadas"], start=1):
+        print(f"{i}. {f['Servicio']} | Vence: {f['Vencimiento']} | Importe: ${f['Valor']}")
+
+    try:
+        opcion = int(input("\n Ingrese el número de la factura que desea pagar: "))
+        if 1 <= opcion <= len(usuario["FacturasAdeudadas"]):
+            factura = usuario["FacturasAdeudadas"][opcion - 1]
+
+            if usuario["Saldo"] >= factura["Valor"]:
+                usuario["Saldo"] -= factura["Valor"]
+                usuario["FacturasAdeudadas"].pop(opcion - 1)
+                print(f"\n Se pagó la factura de {factura['Servicio']} por ${factura['Valor']}.")
+                print(f"💰 Nuevo saldo: ${usuario['Saldo']}")
+            else:
+                print("\n No tienes suficiente saldo para pagar esta factura.")
+        else:
+            print("\n❌ Opción inválida.")
+    except ValueError:
+        print("\n Debes ingresar un número válido.")
 # LAS FACTURAS SOLO SE PAGAN SI TIENES SALDO SUFICIENTE
 # SI LAS FACTURAS SE PAGAN, SE BORRAN DEL DICCIONARIO
 
