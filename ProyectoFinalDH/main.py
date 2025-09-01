@@ -238,7 +238,7 @@ while continuar == "SI":
         case "3":
             pagarFacturas(usuarioActual)
         case "4":
-            print(consultarSucursales(usuarioActual))
+            print(consultarSucursales())31275281
         case "5":
             sacarTurno()
         case "NO":
